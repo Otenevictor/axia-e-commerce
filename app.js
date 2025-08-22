@@ -9,6 +9,9 @@ const mongoose = require('mongoose');
 
 // Importing the user routes
 const userRoutes = require('./routes/user.route');
+const orderRoutes = require('./routes/order.route');
+const cartRoutes = require('./routes/cart.route');  
+const productRoutes = require('./routes/product.route'); // Assuming you have a product route
 
 
 // Create connection to the database
@@ -33,6 +36,9 @@ app.use(cookieParser());
 
 // Connecting endpoints for user database manipulation
 app.use(userRoutes);
+app.use(orderRoutes);
+app.use(cartRoutes);
+app.use(productRoutes); // Assuming you have a product route
 
 
 app.listen(port, () => {
